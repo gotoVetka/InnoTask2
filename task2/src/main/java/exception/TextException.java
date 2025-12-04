@@ -1,6 +1,6 @@
 package exception;
 
-public class TextException extends Exception{
+public class TextException extends Exception {
   public TextException() {
     super();
   }
@@ -9,10 +9,11 @@ public class TextException extends Exception{
     super(message);
   }
 
-  public TextException(Throwable reason) {
-    super(reason);
+  public TextException(Throwable cause) {
+    super(cause);
   }
 
-  public TextException(Throwable reason, String message) {
-    super(message, reason);
+  public TextException(Throwable cause, String message) {
+    super(message, cause);
+  }
 }

@@ -4,7 +4,6 @@ import composite.ComponentType;
 import composite.TextComponent;
 import composite.TextComposite;
 import composite.TextLeaf;
-import constant.ComponentRegex;
 
 import java.util.ArrayList;
 import java.util.List;
