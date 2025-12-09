@@ -1,7 +1,6 @@
 package chain;
 
 import composite.ComponentType;
-import composite.ComponentRegex;
 import parser.TextParser;
 import parser.impl.TextParserImpl;
 
@@ -16,11 +15,11 @@ public class ParserChainBuilder {
 
   public TextParser buildChain(){
     if(chainInstance == null){
-      TextParser text = new TextParserImpl(ComponentType.TEXT, ComponentRegex.TEXT);
-      TextParser paragraph = new TextParserImpl(ComponentType.PARAGRAPH, ComponentRegex.PARAGRAPH);
-      TextParser sentence = new TextParserImpl(ComponentType.SENTENCE, ComponentRegex.SENTENCE);
-      TextParser word = new TextParserImpl(ComponentType.WORD, ComponentRegex.WORD);
-      TextParser symbol = new TextParserImpl(ComponentType.LETTER, ComponentRegex.SYMBOL);
+      TextParser text = new TextParserImpl(ComponentType.TEXT);
+      TextParser paragraph = new TextParserImpl(ComponentType.PARAGRAPH);
+      TextParser sentence = new TextParserImpl(ComponentType.SENTENCE);
+      TextParser word = new TextParserImpl(ComponentType.WORD);
+      TextParser symbol = new TextParserImpl(ComponentType.LETTER);
       text.setNextParser(paragraph);
       paragraph.setNextParser(sentence);
       sentence.setNextParser(word);

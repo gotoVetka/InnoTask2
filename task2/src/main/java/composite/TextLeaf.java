@@ -9,6 +9,7 @@ public class TextLeaf implements TextComponent {
     this.type = type;
   }
 
+
   @Override
   public void add(TextComponent textComponent) throws UnsupportedOperationException{
     throw new UnsupportedOperationException();
@@ -20,9 +21,7 @@ public class TextLeaf implements TextComponent {
   }
 
   @Override
-  public void operation() {
-
-  }
+  public void operation() {}
 
   @Override
   public int count() {
@@ -32,5 +31,10 @@ public class TextLeaf implements TextComponent {
   @Override
   public String restore() {
     return String.valueOf(symbol);
+  }
+
+  @Override
+  public ComponentType getType() {
+    return this.type;
   }
 }

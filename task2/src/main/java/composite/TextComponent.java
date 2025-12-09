@@ -6,4 +6,5 @@ public interface TextComponent {
   void operation();
   int count();
   String restore();
+  ComponentType getType();
 }

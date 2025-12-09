@@ -1,9 +1,6 @@
 package parser;
 
-import composite.ComponentType;
-import composite.TextComponent;
-import composite.TextComposite;
-import composite.TextLeaf;
+import composite.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,12 +8,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class AbstractTextParser implements TextParser {
-  protected final String COMPONENT_REGEX;
   protected TextParser successor;
   protected ComponentType type;
 
-  public AbstractTextParser(ComponentType type, String componentRegex) {
-    COMPONENT_REGEX = componentRegex;
+  public AbstractTextParser(ComponentType type) {
     this.type = type;
   }
 
@@ -27,7 +22,7 @@ public class AbstractTextParser implements TextParser {
   @Override
   public List<TextComponent> parse(String string) {
     List<TextComponent> result = new ArrayList<>();
-    Pattern pattern = Pattern.compile(COMPONENT_REGEX);
+    Pattern pattern = Pattern.compile(type.REGEX);
     Matcher matcher = pattern.matcher(string);
     while (matcher.find()) {
       String fragment = matcher.group();

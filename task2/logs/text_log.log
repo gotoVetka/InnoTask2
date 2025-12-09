@@ -1,0 +1,16 @@
+22:04:05.658 [main] INFO  chain.ParserChainRunner - Runner is running
+22:04:05.663 [main] INFO  chain.ParserChainRunner - Runner is running
+22:10:49.097 [main] INFO  chain.ParserChainRunner - Runner is running
+22:10:49.102 [main] INFO  chain.ParserChainRunner - Runner is running
+22:13:00.559 [main] INFO  chain.ParserChainRunner - Runner is running
+22:13:00.564 [main] INFO  chain.ParserChainRunner - Runner is running
+22:17:12.594 [main] INFO  chain.ParserChainRunner - Runner is running
+22:17:12.599 [main] INFO  chain.ParserChainRunner - Runner is running
+22:17:17.477 [main] INFO  chain.ParserChainRunner - Runner is running
+22:17:17.483 [main] INFO  chain.ParserChainRunner - Runner is running
+22:17:17.494 [main] INFO  chain.ParserChainRunner - Runner is running
+22:17:17.495 [main] INFO  chain.ParserChainRunner - Runner is running
+22:17:17.497 [main] INFO  chain.ParserChainRunner - Runner is running
+22:17:17.498 [main] INFO  chain.ParserChainRunner - Runner is running
+22:39:15.535 [main] ERROR reader.impl.TextReaderImpl - Error with reading file: src/resources/data/test.txt 
+ java.nio.file.NoSuchFileException: src/resources/data/test.txt

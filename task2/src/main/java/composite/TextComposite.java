@@ -1,9 +1,6 @@
 package composite;
 
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.Objects;
-import java.util.StringJoiner;
 
 public class TextComposite implements TextComponent {
   private ArrayList<TextComponent> components = new ArrayList<>();
@@ -13,9 +10,18 @@ public class TextComposite implements TextComponent {
     this.type = type;
   }
 
+  public ArrayList<TextComponent> getComponents() {
+    return components;
+  }
+
   public TextComponent getChild(int index){
     return components.get(index);
   }
+
+  public ComponentType getType() {
+    return this.type;
+  }
+
   @Override
   public void add(TextComponent textComponent) {
     components.add(textComponent);
@@ -43,29 +49,10 @@ public class TextComposite implements TextComponent {
   @Override
   public String restore() {
     StringBuilder sb = new StringBuilder();
-    switch (type){
-      case TEXT -> {
-        components.forEach(component -> {
-          sb.append(component.restore());
-          sb.append("\t\t");
-        });
-      }
-      case PARAGRAPH -> {
-        components.forEach(component -> {
-          sb.append(component.restore());
-          sb.append("\n");
-        });
-      }
-      case WORD, SENTENCE -> {
-        components.forEach(component -> {
-          sb.append(component.restore());
-        });
-        return sb.toString();
-      }
-      case LETTER, PUNCTUATION -> {
-        return  "";
-      }
-    }
+    components.forEach(component -> {
+      sb.append(component.restore());
+      sb.append(component.getType().SEPARATOR);
+    });
     return sb.toString();
   }
 }
